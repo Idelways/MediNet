@@ -10,9 +10,8 @@ class User < ActiveRecord::Base
   end
   
   def update_from_linkedin(client_ready)    
-    profile = client_ready.profile(:fields => ["first_name", "last_name", "headline", "picture-url"])
     
-    client_ready.profile.tap do |profil| 
+    client_ready.profile(:fields => ["first_name", "last_name", "headline", "picture-url"]).tap do |profil| 
       self.firstname = profil.first_name
       self.lastname = profil.last_name
       self.headline = profil.headline 
