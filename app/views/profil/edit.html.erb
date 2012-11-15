@@ -2,7 +2,7 @@
 
 <%= form_for @user, :as => :user, :url => edit_profil_path(@user.id) do |f| -%>
   <div>
-    <%= image_tag @user.picture_url, :alt => "Photo de profil", :class => "picture" if @user.picture_url? %> <%= f.text_field :picture_url %>
+    <strong>Photo : </strong><%= image_tag @user.picture_url, :alt => "Photo de profil", :class => "picture" if @user.picture_url? %> <%= f.text_field :picture_url %>
   </div>
 
   <dl>

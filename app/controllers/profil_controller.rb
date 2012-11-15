@@ -42,8 +42,7 @@ class ProfilController < ApplicationController
       
       @profile = client.profile
       
-      # render :text => client.profile.inspect
-      # redirect_to profil_path(@user.id, @user.slug), :notice => "Informations importées avec succès"
+      redirect_to profil_path(@user.id, @user.slug), :notice => "Informations importées avec succès"
     end
   end
   
