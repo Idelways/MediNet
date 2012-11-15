@@ -10,7 +10,6 @@ class ProfilController < ApplicationController
   def edit
     if params[:user]
       @user.update_attributes(params[:user])
-      @user.save
       redirect_to profil_path(@user.id, @user.slug), :notice => "Profil édité avec succès"
     end
   end
@@ -37,10 +36,7 @@ class ProfilController < ApplicationController
       session[:rtoken]  = atoken
       session[:rsecret] = asecret
       
-      profile = client.profile
       @user.update_from_linkedin(client)
-      
-      @profile = client.profile
       
       redirect_to profil_path(@user.id, @user.slug), :notice => "Informations importées avec succès"
     end
