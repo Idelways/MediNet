@@ -1,0 +1,20 @@
+<h1>Editer le profil</h1>
+
+<%= form_for @user, :as => :user, :url => edit_profil_path(@user.id) do |f| -%>
+  <div>
+    <%= image_tag @user.picture_url, :alt => "Photo de profil", :class => "picture" if @user.picture_url? %> <%= f.text_field :picture_url %>
+  </div>
+
+  <dl>
+    <dt>Nom :</dt>
+    <dd><%= f.text_field :lastname %></dd>
+  
+    <dt>Prénom :</dt>
+    <dd><%= f.text_field :firstname %></dd>
+  
+    <dt>Poste actuel :</dt>
+    <dd><%= f.text_field :headline %></dd>
+  </dl>
+
+  <%= submit_tag "Enregistrer", :id => "submit", :name => "submit", :class => "btn btn-primary", :disabled => false, :disable_with => "Une seconde..." %>
+<% end %>

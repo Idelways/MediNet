@@ -1,0 +1,16 @@
+<h1>Salut <%= @user.firstname %> !</h1>
+
+<%= image_tag @user.picture_url, :alt => "Photo de profil", :class => 'picture right' if @user.picture_url? %>
+
+<div><%= @user.headline %></div>
+
+<dl>
+  <dt>Nom :</dt>
+  <dd><%= @user.lastname %></dd>
+  
+  <dt>Prénom :</dt>
+  <dd><%= @user.firstname %></dd>
+</dl>
+
+<a href="<%= edit_profil_path %>" class="btn btn-danger">Editer le profil</a>
+<a href="<%= auth_profil_path %>" class="btn btn-success">Mettre à jour à partir de LinkedIn</a>

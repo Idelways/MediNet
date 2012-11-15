@@ -1,0 +1,7 @@
+production:
+  api_key:      '285w73k4jfzj'
+  api_secret:   'j5XLS0mOZlBUcgYN'  
+  
+development:
+  api_key:      '285w73k4jfzj'
+  api_secret:   'j5XLS0mOZlBUcgYN'
